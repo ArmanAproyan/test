@@ -1,9 +1,15 @@
-
+import { useEffect } from "react"
 const Lesson = () => {
+
+  useEffect(() => {
+    console.log('rerender')
+  },[]);
+  
+
+
   return (
     <div>
-        <h1>Hello</h1>
-    </div>
+   </div>
   )
 }
 
