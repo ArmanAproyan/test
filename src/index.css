@@ -1,0 +1,12 @@
+header {
+    width: 200px;
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.active {
+    color: blue;
+}
