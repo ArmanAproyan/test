@@ -9,13 +9,11 @@ const Privatelayout = () => {
     if (!isProtected) {
       navigate('/')
     }
-  })
+  }, [navigate])
+
   return (
     <div>
-      <h1>Hello</h1>
-      <header>header</header>
-      <main>Mainnn</main>
-      <footer>Footer</footer>
+      <h1>Private Layout</h1>
     </div>
   )
 }

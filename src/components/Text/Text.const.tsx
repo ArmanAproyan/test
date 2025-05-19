@@ -11,7 +11,7 @@ const defaultStyles = {
   p: {
     fontSize: '16px',
     fontWeight: '400',
-    color: '#444',
+    color: 'black',
     lineHeight: '1.6',
     marginBottom: '12px'
   },
