@@ -1,0 +1,11 @@
+.container {
+  @extend %main-container;
+  @extend %flex-center;
+  @include small(sm) {
+    flex-direction: column;
+  }
+}
+
+.button {
+  @extend %primary-button;
+}

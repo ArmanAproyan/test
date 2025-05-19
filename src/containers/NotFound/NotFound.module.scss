@@ -1,0 +1,9 @@
+.container {
+  @extend %main-container;
+  @extend %flex-center;
+}
+
+.title {
+  @extend %default-title;
+  color: $error-color;
+}

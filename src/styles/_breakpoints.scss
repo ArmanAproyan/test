@@ -1,0 +1,21 @@
+$screen-sm: 576px;
+
+$screen-md: 768px;
+
+$screen-lg: 992px;
+
+$screen-xl: 1200px;
+
+@function breakpoint($size) {
+  @if $size == sm {
+    @return $screen-sm;
+  } @else if $size == md {
+    @return $screen-md;
+  } @else if $size == lg {
+    @return $screen-lg;
+  } @else if $size == xl {
+    @return $screen-xl;
+  } @else {
+    @error "Unknown breakpoint: #{$size}";
+  }
+}
