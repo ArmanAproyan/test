@@ -1,7 +1,7 @@
 .container {
   @extend %main-container;
   @extend %flex-center;
-  @include small(sm) {
+  @include large(lg) {
     flex-direction: column;
   }
 }

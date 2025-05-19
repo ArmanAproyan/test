@@ -1,11 +1,10 @@
 import styles from './NotFound.module.scss'
-import { useTranslation } from 'react-i18next'
+import Text from '@/components/Text'
 
 const NotFound = () => {
-  const { t } = useTranslation()
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>{t('notFound')}</h1>
+      <Text tag="h1" translationKey="notFound" style={{ color: 'red' }} />
     </div>
   )
 }

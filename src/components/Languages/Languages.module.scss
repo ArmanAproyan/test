@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.languages {
+  background-color: $light-color;
+  width: 50px;
+}
+
+.shadow_1,
+.shadow_2 {
+  width: 50px;
+  height: 3px;
+  background-color: rgb(151, 133, 133);
+}
+
+.shadow_2 {
+  background-color: rgb(115, 100, 100);
+}

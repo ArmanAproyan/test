@@ -1,22 +1,14 @@
 .header {
+  @extend %flex-center;
+  justify-content: space-between;
   width: 100%;
   height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 20px;
   background-color: $main-color;
   color: $text-light;
-}
 
-.ul {
-  display: flex;
-  gap: 15px;
-  li {
-    text-decoration: none;
-    list-style: none;
-    margin-left: 10px;
-    color: $text-light;
-    cursor: pointer;
+  @include small(sm) {
+    display: flex;
+    font-size: 12px;
   }
 }
