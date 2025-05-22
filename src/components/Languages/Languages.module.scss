@@ -54,12 +54,12 @@
   left: 0;
   bottom: 50px;
   width: 100%;
-  background-color: white;
+  background-color: $white-color;
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   max-height: 180px;
   overflow-y: auto;
-  z-index: 10;
+  z-index: 2;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -88,12 +88,12 @@
 
 .item:hover,
 .item:focus {
-  background-color: #007bff;
-  color: white;
+  background-color: $blur-color;
+  color: $white-color;
   outline: none;
 }
 
 .active {
-  background-color: #0056b3;
-  color: white;
+  background-color: $blur-color;
+  color: $white-color;
 }

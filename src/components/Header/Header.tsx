@@ -1,8 +1,9 @@
-import styles from './Header.module.scss'
 import { useNavigate } from 'react-router-dom'
-import Burger from '../Burger/Burger'
 import { GucciLogo, SearchIcon, PersonIcon, Bag } from '@/assets/icons'
-import { ROUTE } from '@/routes/publicRoutes/route'
+import { ROUTE } from '@/routes/publicRoutes'
+import { Burger } from '@/components'
+
+import styles from './Header.module.scss'
 
 const Header = () => {
   const navigate = useNavigate()

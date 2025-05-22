@@ -1,7 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom'
-
-import { ROUTE } from '@/routes/publicRoutes/route'
 import { Header, Footer } from '@/components'
+import { ROUTE } from '@/routes/publicRoutes'
 
 const Privatelayout = () => {
   if (!localStorage.getItem('token')) {
