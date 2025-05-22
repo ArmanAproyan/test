@@ -1,8 +1,8 @@
-import NavList from '../NavList/NavList'
+import { NavList } from '../NavList'
 import styles from './OverLay.module.scss'
 import { TOverlay } from './Overlay.types'
 
-const OverLay = ({ isOpen, onClose }: TOverlay) => {
+export const OverLay = ({ isOpen, onClose }: TOverlay) => {
   return (
     <>
       <div className={`${styles.blur} ${isOpen ? styles.blur_active : ''}`} onClick={onClose} />
@@ -19,5 +19,3 @@ const OverLay = ({ isOpen, onClose }: TOverlay) => {
     </>
   )
 }
-
-export default OverLay

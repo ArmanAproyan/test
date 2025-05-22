@@ -1,7 +1,11 @@
 import { Helmet } from 'react-helmet-async'
 import { THelmetProps } from './PageHelmet.props'
+import { PropsWithChildren } from 'react'
 
-const PageHelmet = ({ title = 'Gucci', description = 'Default description' }: THelmetProps) => {
+export const PageHelmet = ({
+  title = 'Gucci',
+  description = 'Default description'
+}: PropsWithChildren<THelmetProps>) => {
   return (
     <Helmet>
       <title>{title}</title>
@@ -9,5 +13,3 @@ const PageHelmet = ({ title = 'Gucci', description = 'Default description' }: TH
     </Helmet>
   )
 }
-
-export default PageHelmet

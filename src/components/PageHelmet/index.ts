@@ -1,1 +1,1 @@
-export { default } from './PageHelmet'
+export * from './PageHelmet'

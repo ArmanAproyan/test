@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 import { GucciLogo, SearchIcon, PersonIcon, Bag } from '@/assets/icons'
-import { ROUTE } from '@/routes/publicRoutes'
-import { Burger } from '@/components'
+import { Burger } from 'components'
 
 import styles from './Header.module.scss'
+import { ROUTE } from '@/routes/publicRoutes/route'
 
-const Header = () => {
+export const Header = () => {
   const navigate = useNavigate()
 
   const navigateToHome = () => {
@@ -26,5 +26,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header

@@ -1,12 +1,7 @@
-import { PageHelmet } from '@/components'
-
-const About = () => {
+export const About = () => {
   return (
     <>
-      <PageHelmet title="About" description="Welcome to About page" />
-      <div>About</div>
+      <h1>About</h1>
     </>
   )
 }
-
-export default About

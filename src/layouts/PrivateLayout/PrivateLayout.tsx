@@ -1,19 +1,24 @@
-import { Navigate, Outlet } from 'react-router-dom'
-import { Header, Footer } from '@/components'
-import { ROUTE } from '@/routes/publicRoutes'
+import { Navigate } from 'react-router-dom'
+import { Header, Footer, PageHelmet } from 'components'
+import { ReactNode } from 'react'
+import { ROUTE } from '@/routes/publicRoutes/route'
 
-const Privatelayout = () => {
+type PrivateLayoutProps = {
+  title: string
+  description: string
+  children?: ReactNode
+}
+
+export const Privatelayout = ({ title, description, children }: PrivateLayoutProps) => {
   if (!localStorage.getItem('token')) {
-    return <Navigate to={ROUTE.LOGIN} />
+    return <Navigate to={ROUTE.HOME} />
   }
   return (
     <div>
+      <PageHelmet title={title} description={description} />
       <Header />
-      <h1>Private Layout</h1>
-      <Outlet />
+      {children}
       <Footer />
     </div>
   )
 }
-
-export default Privatelayout

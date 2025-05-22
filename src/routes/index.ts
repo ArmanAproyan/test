@@ -1,2 +1,3 @@
-export { default as publicRoutes } from './publicRoutes/routes'
-export { default as privateRoutes } from './privateRoutes/routes'
+export * from './privateRoutes'
+export * from './publicRoutes'
+export * from './metaRoutes'

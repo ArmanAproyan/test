@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import styles from './Burger.module.scss'
-import Overlay from '../Overlay'
 import { useLockBodyScroll } from '@/hooks'
+import { OverLay } from 'components'
 
-const Burger = () => {
+export const Burger = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleMenu = () => setIsOpen((open) => !open)
+
+  localStorage.setItem('token', JSON.stringify('jwt'))
 
   useLockBodyScroll(isOpen)
 
@@ -21,9 +23,7 @@ const Burger = () => {
           Menu
         </span>
       </nav>
-      <Overlay isOpen={isOpen} onClose={toggleMenu} />
+      <OverLay isOpen={isOpen} onClose={toggleMenu} />
     </>
   )
 }
-
-export default Burger

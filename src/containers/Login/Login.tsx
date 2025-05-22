@@ -1,12 +1,15 @@
 import styles from './Login.module.scss'
 
-const Login = () => {
+export const Login = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+  }
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <h1 className={styles.card__title}>Login</h1>
-        <form>
-          <input type="email" placeholder="Email" className={styles.input} />
+        <form onSubmit={handleSubmit}>
+          <input type="name" placeholder="Name" className={styles.input} />
           <input type="password" placeholder="Password" className={styles.input} />
           <input type="submit" className={styles.submit} value={'Sign In'} />
         </form>
@@ -15,5 +18,3 @@ const Login = () => {
     </div>
   )
 }
-
-export default Login

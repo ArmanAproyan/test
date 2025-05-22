@@ -1,17 +1,21 @@
-import { Outlet } from 'react-router-dom'
-import { Header, Footer, PageHelmet } from '@/components'
-
+import { Footer, Header, PageHelmet } from 'components'
 import styles from './Layout.module.scss'
+import { PropsWithChildren } from 'react'
 
-const PublicLayout = () => (
+type PublicLayoutProps = {
+  title: string
+  description: string
+}
+
+export const PublicLayout = ({
+  title,
+  description,
+  children
+}: PropsWithChildren<PublicLayoutProps>) => (
   <div className={styles.layout}>
-    <PageHelmet />
+    <PageHelmet title={title} description={description} />
     <Header />
-    <main className={styles.main}>
-      <Outlet />
-    </main>
+    <main className={styles.main}>{children}</main>
     <Footer />
   </div>
 )
-
-export default PublicLayout

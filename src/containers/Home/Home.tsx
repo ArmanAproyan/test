@@ -1,12 +1,3 @@
-import { PageHelmet } from '@/components'
-
-const Home = () => {
-  return (
-    <div>
-      <PageHelmet title="Home" description="Welcome to Home Page" />
-      <div>Home</div>
-    </div>
-  )
+export const Home = () => {
+  return <h1>Welcome to Home Page</h1>
 }
-
-export default Home

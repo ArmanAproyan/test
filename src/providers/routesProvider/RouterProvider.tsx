@@ -1,24 +1,18 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
-import { PublicLayout, PrivateLayout } from '@/layouts'
-import ROUTES from '@/routes/publicRoutes'
-import PRIVATE_ROUTES from '@/routes/privateRoutes'
+import { PUBLIC_ROUTES, PRIVATE_ROUTES } from '@/routes'
 
 const RouterProvder = () => (
   <BrowserRouter>
     <HelmetProvider>
       <Routes>
-        <Route element={<PublicLayout />}>
-          {ROUTES.map(({ id, path, component }) => (
-            <Route key={id} path={path} element={component} />
-          ))}
-        </Route>
+        {PUBLIC_ROUTES.map(({ id, path, component }) => (
+          <Route key={id} path={path} element={component} />
+        ))}
 
-        <Route element={<PrivateLayout />}>
-          {PRIVATE_ROUTES.map(({ id, path, component }) => (
-            <Route key={id} path={path} element={component} />
-          ))}
-        </Route>
+        {PRIVATE_ROUTES.map(({ id, path, component }) => (
+          <Route key={id} path={path} element={component} />
+        ))}
       </Routes>
     </HelmetProvider>
   </BrowserRouter>

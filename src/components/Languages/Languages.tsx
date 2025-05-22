@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LANGUAGES } from './Languages.const'
 import { useOutSideClick } from '@/hooks'
+import { LANGUAGES } from './Languages.const'
 
 import styles from './Languages.module.scss'
 
-const Languages = () => {
+export const Languages = () => {
   const { i18n } = useTranslation()
   const [open, setOpen] = useState(false)
   const dropdownRef = useOutSideClick(() => setOpen(false))
@@ -43,5 +43,3 @@ const Languages = () => {
     </div>
   )
 }
-
-export default Languages
