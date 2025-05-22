@@ -7,8 +7,6 @@ export const Burger = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleMenu = () => setIsOpen((open) => !open)
 
-  localStorage.setItem('token', JSON.stringify('jwt'))
-
   useLockBodyScroll(isOpen)
 
   return (
