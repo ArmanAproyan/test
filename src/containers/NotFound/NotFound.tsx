@@ -1,12 +1,10 @@
-import styles from './NotFound.module.scss'
-import Text from '@/components/Text'
+import { PageHelmet } from '@/components'
 
-const NotFound = () => {
-  return (
-    <div className={styles.container}>
-      <Text tag="h1" translationKey="notFound" style={{ color: 'red' }} />
-    </div>
-  )
-}
+const NotFound = () => (
+  <div>
+    <PageHelmet title="Not Found" description="this page is not found" />
+    Not Found
+  </div>
+)
 
 export default NotFound
