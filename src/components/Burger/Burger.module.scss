@@ -1,0 +1,49 @@
+.navbar {
+  color: $white-color;
+
+  gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 32px;
+  position: relative;
+  z-index: 3000; //z-index lower
+
+  @include small(sm) {
+    padding: 17px 16px;
+  }
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.burger {
+  width: 20px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1002; //change z-index
+
+  &__line__item {
+    background-color: $black-color;
+
+    height: 2px;
+    border-radius: 2px;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: black;
+    font-size: 12px;
+    font-weight: 200;
+    cursor: pointer;
+
+    @include small(sm) {
+      display: none;
+    }
+  }
+}

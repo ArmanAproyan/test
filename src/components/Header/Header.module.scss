@@ -1,14 +1,40 @@
 .header {
   @extend %flex-center;
+  background-color: $white-color;
+
   justify-content: space-between;
-  width: 100%;
-  height: 60px;
-  padding: 0 20px;
-  background-color: $main-color;
-  color: $text-light;
+  padding: 32px 64px;
+  max-width: 1440px;
+  height: 56px;
+  color: black;
+
+  @include small(sm) {
+    padding: 24px 16px;
+  }
+
+  &__other {
+    @extend %flex-center;
+  }
+
+  &__icons {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    @include small(sm) {
+      width: 16px;
+      height: 16px;
+    }
+  }
 
   @include small(sm) {
     display: flex;
     font-size: 12px;
   }
+}
+
+.logo {
+  width: 120px;
+  height: 90px;
+  cursor: pointer;
 }
