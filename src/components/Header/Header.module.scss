@@ -20,7 +20,7 @@
     gap: 20px;
 
     @include breakpoint(mobile) {
-      gap: 10px;
+      gap: 5px;
     }
   }
 
@@ -29,16 +29,30 @@
     @extend %flex-center;
 
     color: $white-color;
-    font-weight: 500;
-    background-color: $black-color;
-    width: 80px;
-    height: 30px;
-    border-radius: 10px;
+    font-weight: 600;
+    background: linear-gradient(135deg, $black-color, darken($black-color, 10%));
+    width: 100px;
+    height: 36px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: lighten($black-color, 5%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
     @include breakpoint(mobile) {
-      width: 50px;
-      height: 25px;
-      border-radius: 5px;
+      width: 70px;
+      height: 28px;
+      border-radius: 8px;
+      font-size: 14px;
     }
   }
 
