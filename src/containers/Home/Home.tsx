@@ -1,3 +1,1 @@
-export const Home = () => {
-  return <h1>Welcome to Home Page</h1>
-}
+export const Home = () => <span>Welcome to Home Page</span>

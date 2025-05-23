@@ -1,33 +1,36 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PRIVATE_ROUTE } from '@/routes'
+import { ROUTE } from '@/routes/publicRoutes/route'
+import { generateJWT } from '@/infrastructure'
 
-const useLogin = () => {
+export const useLogin = () => {
   const [data, setData] = useState({ userName: '', password: '' })
+  const [errrorMessage, setErrorMessage] = useState<string>('')
   const navigate = useNavigate()
 
-  const storedAuth = localStorage.getItem('authenticate')
-  const parsedValue = storedAuth ? JSON.parse(storedAuth) : null
+  const storedAuth = localStorage.getItem('authentication')
+  const { userName, password } = storedAuth ? JSON.parse(storedAuth) : null
+
+  const token = localStorage.getItem('token')
 
   useEffect(() => {
-    if (parsedValue.token) {
-      console.log(parsedValue.token)
-      navigate('/')
+    if (token) {
+      navigate(ROUTE.HOME)
     }
-  }, [navigate])
+  }, [navigate, token])
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    if (parsedValue) {
-      if (data.userName === parsedValue.userName && data.password === parsedValue.password) {
-        const updated = { ...parsedValue, token: 'JWT' }
-        localStorage.setItem('authenticate', JSON.stringify(updated))
-        navigate(PRIVATE_ROUTE.DASHBORD)
+    if (userName && password) {
+      if (data.userName === userName && data.password === password) {
+        generateJWT()
+        navigate(PRIVATE_ROUTE.ACCAUNT)
       } else {
-        console.log('❌ Wrong credentials')
+        setErrorMessage('Wrong Login or Password')
       }
     } else {
-      console.log('❌ No user found in localStorage')
+      console.log('No user found in localStorage')
     }
   }
 
@@ -39,7 +42,5 @@ const useLogin = () => {
     }))
   }
 
-  return [handleChange, handleSubmit] as const
+  return [handleChange, handleSubmit, errrorMessage] as const
 }
-
-export default useLogin

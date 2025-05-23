@@ -1,4 +1,4 @@
-import { NavList } from '../NavList'
+import { NavList } from 'components/NavList'
 import styles from './OverLay.module.scss'
 import { TOverlay } from './Overlay.types'
 

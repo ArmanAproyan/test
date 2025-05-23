@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { TNavlist } from './NavList.types'
 import styles from './NavList.module.scss'
-import { PUBLIC_ROUTES } from '@/routes'
+import { PUBLIC_ROUTES, PRIVATE_ROUTES } from '@/routes'
 
 export const NavList = ({ onClose }: TNavlist) => {
   const navigate = useNavigate()
@@ -10,8 +10,9 @@ export const NavList = ({ onClose }: TNavlist) => {
     navigate(path)
   }
   const visibleRoutes = PUBLIC_ROUTES.filter(
-    (route) => route.path !== '*' && route.name !== 'NotFound'
-  )
+    (route) => route.name !== 'Login' && route.name !== 'Not Found'
+  ).concat(PRIVATE_ROUTES)
+
   return (
     <ul className={styles.menu}>
       {visibleRoutes.map(({ path, name, id }) => {

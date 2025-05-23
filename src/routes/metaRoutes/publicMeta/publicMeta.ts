@@ -1,4 +1,4 @@
-import { ROUTE } from '@/routes/publicRoutes/route'
+import { ROUTE } from '@/routes'
 
 export const PUBLIC_META = {
   [ROUTE.HOME]: {
@@ -26,7 +26,7 @@ export const PUBLIC_META = {
     description: 'Login to your account'
   },
   [ROUTE.NOTFOUND]: {
-    title: '404',
+    title: 'Not Found',
     description: 'Page not found'
   }
 }

@@ -4,3 +4,9 @@ export enum PRIVATE_ROUTE {
   'HISTORY' = '/history',
   'NOTFOUND' = '*'
 }
+
+export enum PrivateRouteNames {
+  DASHBOARD = 'Dashboard',
+  ACCAUNT = 'Accaunt',
+  HISTORY = 'History'
+}

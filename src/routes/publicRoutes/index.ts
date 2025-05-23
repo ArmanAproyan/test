@@ -1,3 +1,3 @@
 export * from './routes'
-// export * from './route'
 export * from './routes.types'
+export * from './route'

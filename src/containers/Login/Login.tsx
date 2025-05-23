@@ -2,7 +2,7 @@ import { useLogin } from '@/hooks'
 import styles from './Login.module.scss'
 
 export const Login = () => {
-  const [handleChange, handleSubmit] = useLogin()
+  const [handleChange, handleSubmit, errorMessage] = useLogin()
 
   return (
     <div className={styles.container}>
@@ -24,6 +24,7 @@ export const Login = () => {
             className={styles.input}
           />
           <input type="submit" className={styles.submit} value="Sign In" />
+          <span className={styles.error}>{errorMessage}</span>
         </form>
         <p className={styles.link}>Forgot password?</p>
       </div>

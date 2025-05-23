@@ -43,7 +43,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+}
+
+%flex-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 %main-container {

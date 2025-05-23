@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-const useLockBodyScroll = (isOpen: boolean) => {
+export const useLockBodyScroll = (isOpen: boolean) => {
   useLayoutEffect(() => {
     if (!isOpen) return
 
@@ -12,5 +12,3 @@ const useLockBodyScroll = (isOpen: boolean) => {
     }
   }, [isOpen])
 }
-
-export default useLockBodyScroll

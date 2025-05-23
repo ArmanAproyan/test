@@ -1,13 +1,14 @@
 import { PublicLayout } from '@/layouts'
 import { About, Home, Login, NotFound } from '@/containers'
 import { TRoute } from './routes.types'
-import { PUBLIC_META } from '../metaRoutes'
 import { ROUTE } from './route'
+import { PublicRouteNames } from './routes.types'
+import { PUBLIC_META } from '@/routes'
 
 export const PUBLIC_ROUTES: TRoute[] = [
   {
     id: 1,
-    name: 'Home',
+    name: PublicRouteNames.HOME,
     path: ROUTE.HOME,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.HOME]}>
@@ -17,7 +18,7 @@ export const PUBLIC_ROUTES: TRoute[] = [
   },
   {
     id: 2,
-    name: 'About',
+    name: PublicRouteNames.ABOUT,
     path: ROUTE.ABOUT,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.ABOUT]}>
@@ -27,43 +28,47 @@ export const PUBLIC_ROUTES: TRoute[] = [
   },
   {
     id: 3,
-    name: 'NotFound',
+    name: PublicRouteNames.NOTFOUND,
     path: ROUTE.NOTFOUND,
-    component: <NotFound />
+    component: (
+      <PublicLayout {...PUBLIC_META[ROUTE.NOTFOUND]} showContext={false}>
+        <NotFound />
+      </PublicLayout>
+    )
   },
   {
     id: 4,
-    name: 'Actions',
+    name: PublicRouteNames.ACTIONS,
     path: ROUTE.ACTIONS,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.ACTIONS]}>
-        <div>Actions content coming soon</div>
+        <span>Actions content coming soon</span>
       </PublicLayout>
     )
   },
   {
     id: 5,
-    name: 'Contact',
+    name: PublicRouteNames.CONTACT,
     path: ROUTE.CONTACTS,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.CONTACTS]}>
-        <div>Contact content coming soon</div>
+        <span>Contact content coming soon</span>
       </PublicLayout>
     )
   },
   {
     id: 6,
-    name: 'Products',
+    name: PublicRouteNames.PRODUCTS,
     path: ROUTE.PRODUCTS,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.PRODUCTS]}>
-        <div>Products content coming soon</div>
+        <span>Products content coming soon</span>
       </PublicLayout>
     )
   },
   {
     id: 7,
-    name: 'Login',
+    name: PublicRouteNames.LOGIN,
     path: ROUTE.LOGIN,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.LOGIN]}>

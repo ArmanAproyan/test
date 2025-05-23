@@ -6,3 +6,13 @@ export type TRoute = {
   path: string
   component: ReactNode
 }
+
+export enum PublicRouteNames {
+  HOME = 'Home',
+  ABOUT = 'About',
+  NOTFOUND = 'Not Found',
+  ACTIONS = 'Actions',
+  CONTACT = 'Contact',
+  PRODUCTS = 'Products',
+  LOGIN = 'Login'
+}
