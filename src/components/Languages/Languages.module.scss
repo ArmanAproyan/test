@@ -11,17 +11,17 @@
 }
 
 .toggle {
+  @extend %flex-between;
+
   width: 100%;
   padding: 8px 12px;
   font-size: 16px;
   background-color: rgb(62 53 53);
   border: 1px solid #ccc;
-  color: white;
+  color: $white-color;
   border-radius: 6px;
   cursor: pointer;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   font-weight: 200;
 }

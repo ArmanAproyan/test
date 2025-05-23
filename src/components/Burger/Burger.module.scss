@@ -1,14 +1,13 @@
 .navbar {
-  color: $white-color;
+  @extend %flex-between;
 
+  color: $white-color;
   gap: 15px;
-  display: flex;
-  justify-content: space-between;
   padding: 19px 32px;
   position: relative;
   z-index: 6;
 
-  @include small(sm) {
+  @include breakpoint(mobile) {
     padding: 17px 16px;
   }
 }
@@ -20,13 +19,15 @@
 }
 
 .burger {
+  @extend %flex-between;
+
   width: 20px;
   height: 16px;
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
   cursor: pointer;
   z-index: 4;
+  box-sizing: content-box;
+  padding: 5px;
 
   &__line__item {
     background-color: $black-color;
@@ -36,13 +37,15 @@
   }
 
   &__text {
+    @extend %flex-center;
+
     text-transform: uppercase;
-    color: black;
+    color: $black-color;
     font-size: 12px;
     font-weight: 200;
     cursor: pointer;
 
-    @include small(sm) {
+    @include breakpoint(mobile) {
       display: none;
     }
   }

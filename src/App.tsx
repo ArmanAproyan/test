@@ -1,4 +1,4 @@
-import RouterProvder from './providers/routesProvider/RouterProvider'
+import { RouterProvder } from '@/providers'
 
 const App = () => <RouterProvder />
 

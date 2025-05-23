@@ -7,6 +7,7 @@ export enum UserAuthInfo {
 
 export const useAuthenticate = () => {
   const [logInfo, setLabel] = useState(UserAuthInfo.LOGIN)
+  console.log(logInfo)
 
   const updateLabel = () => {
     const token = localStorage.getItem('token')

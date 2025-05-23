@@ -1,7 +1,9 @@
 import { Navigate } from 'react-router-dom'
 import { Header, Footer, PageHelmet } from 'components'
-import { ReactNode } from 'react'
-import { ROUTE } from '@/routes/publicRoutes/route'
+import { PropsWithChildren, ReactNode } from 'react'
+import { ROUTE } from '@/routes'
+
+import styles from './PrivateLayout.module.scss'
 
 type PrivateLayoutProps = {
   title: string
@@ -9,15 +11,19 @@ type PrivateLayoutProps = {
   children?: ReactNode
 }
 
-export const Privatelayout = ({ title, description, children }: PrivateLayoutProps) => {
+export const Privatelayout = ({
+  title,
+  description,
+  children
+}: PropsWithChildren<PrivateLayoutProps>) => {
   if (!localStorage.getItem('token')) {
-    return <Navigate to={ROUTE.HOME} />
+    return <Navigate to={ROUTE.LOGIN} />
   }
   return (
-    <div>
+    <div className={styles.layout}>
       <PageHelmet title={title} description={description} />
       <Header />
-      {children}
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
   )

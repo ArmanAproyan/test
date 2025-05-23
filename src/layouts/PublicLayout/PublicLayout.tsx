@@ -5,17 +5,19 @@ import { PropsWithChildren } from 'react'
 type PublicLayoutProps = {
   title: string
   description: string
+  shiwHeaderFooter?: boolean
 }
 
 export const PublicLayout = ({
   title,
   description,
+  shiwHeaderFooter = true,
   children
 }: PropsWithChildren<PublicLayoutProps>) => (
   <div className={styles.layout}>
     <PageHelmet title={title} description={description} />
-    <Header />
+    {shiwHeaderFooter && <Header />}
     <main className={styles.main}>{children}</main>
-    <Footer />
+    {shiwHeaderFooter && <Footer />}
   </div>
 )

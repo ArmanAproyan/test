@@ -1,26 +1,8 @@
 @use './colors' as *;
 @use './breakpoints' as *;
 
-@mixin small($screen) {
-  @media (max-width: #{breakpoint($screen)}) {
-    @content;
-  }
-}
-
-@mixin middle($screen) {
-  @media (max-width: #{breakpoint($screen)}) {
-    @content;
-  }
-}
-
-@mixin large($screen) {
-  @media (max-width: #{breakpoint($screen)}) {
-    @content;
-  }
-}
-
-@mixin xl($screen) {
-  @media (max-width: #{breakpoint($screen)}) {
+@mixin breakpoint($size) {
+  @media (max-width: breakpoint($size)) {
     @content;
   }
 }

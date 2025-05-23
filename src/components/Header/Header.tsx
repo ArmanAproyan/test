@@ -10,7 +10,7 @@ export const Header = () => {
   const [logInfo, updateLabel] = useAuthenticate()
 
   const handleClick = () => {
-    if (logInfo === UserAuthInfo.LOGIN) {
+    if (logInfo === UserAuthInfo.LOGOUT) {
       localStorage.removeItem('token')
       updateLabel()
       navigate(ROUTE.LOGIN)
