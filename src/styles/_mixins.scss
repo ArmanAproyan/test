@@ -1,8 +1,14 @@
 @use './colors' as *;
 @use './breakpoints' as *;
 
-@mixin breakpoint($size) {
-  @media (max-width: breakpoint($size)) {
+@mixin max-breakpoint($size) {
+  @media (max-width: #{breakpoint($size)}) {
+    @content;
+  }
+}
+
+@mixin min-breakpoint($size) {
+  @media (min-width: #{breakpoint($size)}) {
     @content;
   }
 }
@@ -30,6 +36,24 @@
 %flex-between {
   display: flex;
   justify-content: space-between;
+}
+
+%welcome-title {
+  color: $main-color;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0;
+
+  @include max-breakpoint(tablet) {
+    font-size: 28px;
+  }
+
+  @include max-breakpoint(mobile) {
+    font-size: 22px;
+    margin: 24px 0;
+  }
 }
 
 %main-container {

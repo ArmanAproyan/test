@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react'
 
-export enum UserAuthInfo {
-  LOGIN = 'Login',
-  LOGOUT = 'Logout'
+export const AUTH_INFO = {
+  LOGIN: 'Login',
+  LOGOUT: 'Logout'
 }
 
 export const useAuthenticate = () => {
-  const [logInfo, setLabel] = useState(UserAuthInfo.LOGIN)
-  console.log(logInfo)
+  const [logInfo, setLogInfo] = useState(AUTH_INFO.LOGIN)
 
   const updateLabel = () => {
     const token = localStorage.getItem('token')
-    setLabel(token ? UserAuthInfo.LOGOUT : UserAuthInfo.LOGIN)
+    setLogInfo(token ? AUTH_INFO.LOGOUT : AUTH_INFO.LOGIN)
   }
 
   useEffect(() => {

@@ -7,7 +7,7 @@
   position: relative;
   z-index: 6;
 
-  @include breakpoint(mobile) {
+  @include max-breakpoint(mobile) {
     padding: 17px 16px;
   }
 }
@@ -45,7 +45,7 @@
     font-weight: 200;
     cursor: pointer;
 
-    @include breakpoint(mobile) {
+    @include max-breakpoint(mobile) {
       display: none;
     }
   }

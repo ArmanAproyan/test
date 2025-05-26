@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { GucciLogo, SearchIcon, PersonIcon, Bag } from '@/assets/icons'
 import { Burger } from 'components'
 import { ROUTE } from '@/routes'
-import { useAuthenticate, UserAuthInfo } from '@/hooks'
+import { AUTH_INFO, useAuthenticate } from '@/hooks'
 import styles from './Header.module.scss'
 
 export const Header = () => {
@@ -10,7 +10,7 @@ export const Header = () => {
   const [logInfo, updateLabel] = useAuthenticate()
 
   const handleClick = () => {
-    if (logInfo === UserAuthInfo.LOGOUT) {
+    if (logInfo === AUTH_INFO.LOGOUT) {
       localStorage.removeItem('token')
       updateLabel()
       navigate(ROUTE.LOGIN)

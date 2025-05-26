@@ -7,11 +7,11 @@
   height: 56px;
   color: $black-color;
 
-  @include breakpoint(laptop) {
+  @include max-breakpoint(laptop) {
     padding: 25px 13px;
   }
 
-  @include breakpoint(mobile) {
+  @include max-breakpoint(mobile) {
     padding: 24px 16px;
   }
 
@@ -19,7 +19,7 @@
     @extend %flex-center;
     gap: 20px;
 
-    @include breakpoint(mobile) {
+    @include max-breakpoint(mobile) {
       gap: 5px;
     }
   }
@@ -30,7 +30,7 @@
 
     color: $white-color;
     font-weight: 600;
-    background: linear-gradient(135deg, $black-color, darken($black-color, 10%));
+    background: $black-color;
     width: 100px;
     height: 36px;
     border-radius: 12px;
@@ -38,7 +38,6 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background: lighten($black-color, 5%);
       transform: translateY(-2px);
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     }
@@ -48,7 +47,7 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    @include breakpoint(mobile) {
+    @include max-breakpoint(mobile) {
       width: 70px;
       height: 28px;
       border-radius: 8px;
@@ -61,7 +60,7 @@
     height: 24px;
     cursor: pointer;
 
-    @include breakpoint(mobile) {
+    @include max-breakpoint(mobile) {
       width: 20px;
       height: 20px;
     }

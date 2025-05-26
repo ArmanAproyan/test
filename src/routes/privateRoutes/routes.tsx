@@ -3,7 +3,7 @@ import { PRIVATE_ROUTE } from './route'
 import { TRoute } from '@/routes'
 import { PRIVATE_META } from '../metaRoutes'
 import { PrivateRouteNames } from './route'
-import { Account } from '@/containers'
+import { Account, Dashboard, History } from '@/containers'
 
 export const PRIVATE_ROUTES: TRoute[] = [
   {
@@ -12,7 +12,7 @@ export const PRIVATE_ROUTES: TRoute[] = [
     path: PRIVATE_ROUTE.DASHBORD,
     component: (
       <Privatelayout {...PRIVATE_META[PRIVATE_ROUTE.DASHBORD]}>
-        <span>Dashboard</span>
+        <Dashboard />
       </Privatelayout>
     )
   },
@@ -32,7 +32,7 @@ export const PRIVATE_ROUTES: TRoute[] = [
     path: PRIVATE_ROUTE.HISTORY,
     component: (
       <Privatelayout {...PRIVATE_META[PRIVATE_ROUTE.HISTORY]}>
-        <span>History</span>
+        <History />
       </Privatelayout>
     )
   }

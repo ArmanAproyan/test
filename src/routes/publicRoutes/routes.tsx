@@ -1,5 +1,5 @@
 import { PublicLayout } from '@/layouts'
-import { About, Home, Login, NotFound } from '@/containers'
+import { About, Actions, Contact, Home, Login, NotFound, Products } from '@/containers'
 import { TRoute } from './routes.types'
 import { ROUTE } from './route'
 import { PublicRouteNames } from './routes.types'
@@ -42,7 +42,7 @@ export const PUBLIC_ROUTES: TRoute[] = [
     path: ROUTE.ACTIONS,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.ACTIONS]}>
-        <span>Actions content coming soon</span>
+        <Actions />
       </PublicLayout>
     )
   },
@@ -52,7 +52,7 @@ export const PUBLIC_ROUTES: TRoute[] = [
     path: ROUTE.CONTACTS,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.CONTACTS]}>
-        <span>Contact content coming soon</span>
+        <Contact />
       </PublicLayout>
     )
   },
@@ -62,7 +62,7 @@ export const PUBLIC_ROUTES: TRoute[] = [
     path: ROUTE.PRODUCTS,
     component: (
       <PublicLayout {...PUBLIC_META[ROUTE.PRODUCTS]}>
-        <span>Products content coming soon</span>
+        <Products />
       </PublicLayout>
     )
   },
