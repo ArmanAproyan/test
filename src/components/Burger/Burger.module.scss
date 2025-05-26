@@ -10,43 +10,35 @@
   @include max-breakpoint(mobile) {
     padding: 17px 16px;
   }
-}
 
-.logo {
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
+  &__burger {
+    @extend %flex-between;
 
-.burger {
-  @extend %flex-between;
-
-  width: 20px;
-  height: 16px;
-  flex-direction: column;
-  cursor: pointer;
-  z-index: 4;
-  box-sizing: content-box;
-  padding: 5px;
-
-  &__line__item {
-    background-color: $black-color;
-
-    height: 2px;
-    border-radius: 2px;
-  }
-
-  &__text {
-    @extend %flex-center;
-
-    text-transform: uppercase;
-    color: $black-color;
-    font-size: 12px;
-    font-weight: 200;
+    width: 20px;
+    height: 16px;
+    flex-direction: column;
     cursor: pointer;
+    z-index: 4;
+    box-sizing: content-box;
+    padding: 5px;
 
-    @include max-breakpoint(mobile) {
-      display: none;
+    &__line {
+      background-color: $black-color;
+      height: 2px;
+      border-radius: 2px;
+    }
+
+    &__text {
+      @extend %flex-center;
+      text-transform: uppercase;
+      color: $black-color;
+      font-size: 12px;
+      font-weight: 200;
+      cursor: pointer;
+
+      @include max-breakpoint(mobile) {
+        display: none;
+      }
     }
   }
 }

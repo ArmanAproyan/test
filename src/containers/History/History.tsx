@@ -1,3 +1,9 @@
-import styles from './Histpry.module.scss'
+import { useClassNames } from '@/hooks'
 
-export const History = () => <h1 className={styles.title}>Welcome to History</h1>
+import styles from './History.module.scss'
+
+export const History = () => {
+  const { cn } = useClassNames('title', styles)
+
+  return <h1 className={cn()}>Welcome to History</h1>
+}

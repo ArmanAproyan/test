@@ -1,5 +1,9 @@
+import { useClassNames } from '@/hooks'
+
 import styles from './Dashboard.module.scss'
 
 export const Dashboard = () => {
-  return <h1 className={styles.title}>Welcome to Dashboard</h1>
+  const { cn } = useClassNames('title', styles)
+
+  return <h1 className={cn()}>Welcome to Dashboard</h1>
 }

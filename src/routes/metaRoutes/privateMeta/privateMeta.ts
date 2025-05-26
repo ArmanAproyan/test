@@ -5,7 +5,7 @@ export const PRIVATE_META = {
     title: 'Dashboard',
     description: 'This is the dashboard'
   },
-  [PRIVATE_ROUTE.ACCAUNT]: {
+  [PRIVATE_ROUTE.ACCOUNT]: {
     title: 'Account',
     description: 'Manage your account'
   },

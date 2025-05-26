@@ -1,3 +1,8 @@
+import { useClassNames } from '@/hooks'
 import styles from './Actions.module.scss'
 
-export const Actions = () => <h1 className={styles.title}>Welcome To Actions</h1>
+export const Actions = () => {
+  const { cn } = useClassNames('title', styles)
+
+  return <h1 className={cn()}>Welcome To Actions</h1>
+}

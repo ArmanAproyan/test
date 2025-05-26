@@ -25,7 +25,7 @@ export const useLogin = () => {
     if (userName && password) {
       if (data.userName === userName && data.password === password) {
         generateJWT()
-        navigate(PRIVATE_ROUTE.ACCAUNT)
+        navigate(PRIVATE_ROUTE.ACCOUNT)
       } else {
         setErrorMessage('Wrong Login or Password')
       }

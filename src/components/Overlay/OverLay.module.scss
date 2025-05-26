@@ -21,12 +21,37 @@
   padding-right: 15px;
   width: 100%;
   height: 70px;
-}
 
-.nav {
-  display: flex;
-  justify-content: start;
-  padding-left: 80px;
+  &__nav {
+    display: flex;
+    justify-content: start;
+    padding-left: 80px;
+  }
+
+  &__close {
+    @extend %flex-center;
+    color: $white-color;
+    background-color: $black-color;
+
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-family: initial;
+    border-radius: 50%;
+    font-weight: 100;
+    padding-bottom: 3px;
+    cursor: pointer;
+    transition: 1s;
+
+    span {
+      font-size: 25px;
+      font-weight: 100;
+    }
+
+    &:hover {
+      transform: scale(0.8);
+    }
+  }
 }
 
 .overlay {
@@ -38,36 +63,11 @@
   top: 0;
   right: 0;
   height: 100vh;
-  width: 30%;
+  width: 35%;
   transform: translateX(100%);
   transition: transform 1s ease;
   box-shadow: 0 4px 12px rgba(255, 251, 251, 0.751);
   z-index: 6;
-}
-
-.close {
-  @extend %flex-center;
-  color: $white-color;
-  background-color: $black-color;
-
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  font-family: initial;
-  border-radius: 50%;
-  font-weight: 100;
-  padding-bottom: 3px;
-  cursor: pointer;
-  transition: 1s;
-
-  span {
-    font-size: 25px;
-    font-weight: 100;
-  }
-
-  &:hover {
-    transform: scale(0.8);
-  }
 }
 
 .active {

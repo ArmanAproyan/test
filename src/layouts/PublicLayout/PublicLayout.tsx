@@ -1,23 +1,28 @@
 import { Footer, Header, PageHelmet } from 'components'
-import styles from './Layout.module.scss'
 import { PropsWithChildren } from 'react'
+import { useClassNames } from '@/hooks'
+
+import styles from './Layout.module.scss'
 
 type PublicLayoutProps = {
   title: string
   description: string
-  shiwHeaderFooter?: boolean
+  showHeaderFooter?: boolean
 }
 
 export const PublicLayout = ({
   title,
   description,
-  shiwHeaderFooter = true,
+  showHeaderFooter = true,
   children
-}: PropsWithChildren<PublicLayoutProps>) => (
-  <div className={styles.layout}>
-    <PageHelmet title={title} description={description} />
-    {shiwHeaderFooter && <Header />}
-    <main className={styles.main}>{children}</main>
-    {shiwHeaderFooter && <Footer />}
-  </div>
-)
+}: PropsWithChildren<PublicLayoutProps>) => {
+  const { cn } = useClassNames('layout', styles)
+  return (
+    <div className={cn()}>
+      <PageHelmet title={title} description={description} />
+      {showHeaderFooter && <Header />}
+      <main className={cn('__main')}>{children}</main>
+      {showHeaderFooter && <Footer />}
+    </div>
+  )
+}

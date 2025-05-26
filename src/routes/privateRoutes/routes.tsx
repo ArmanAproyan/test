@@ -18,10 +18,10 @@ export const PRIVATE_ROUTES: TRoute[] = [
   },
   {
     id: 11,
-    name: PrivateRouteNames.ACCAUNT,
-    path: PRIVATE_ROUTE.ACCAUNT,
+    name: PrivateRouteNames.ACCOUNT,
+    path: PRIVATE_ROUTE.ACCOUNT,
     component: (
-      <Privatelayout {...PRIVATE_META[PRIVATE_ROUTE.ACCAUNT]}>
+      <Privatelayout {...PRIVATE_META[PRIVATE_ROUTE.ACCOUNT]}>
         <Account />
       </Privatelayout>
     )

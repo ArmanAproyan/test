@@ -1,12 +1,12 @@
 export enum PRIVATE_ROUTE {
   'DASHBORD' = '/dashbord',
-  'ACCAUNT' = '/accaunt',
+  'ACCOUNT' = '/account',
   'HISTORY' = '/history',
   'NOTFOUND' = '*'
 }
 
 export enum PrivateRouteNames {
   DASHBOARD = 'Dashboard',
-  ACCAUNT = 'Accaunt',
+  ACCOUNT = 'Account',
   HISTORY = 'History'
 }

@@ -1,4 +1,6 @@
+import { ROUTE } from '@/routes'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const AUTH_INFO = {
   LOGIN: 'Login',
@@ -7,10 +9,19 @@ export const AUTH_INFO = {
 
 export const useAuthenticate = () => {
   const [logInfo, setLogInfo] = useState(AUTH_INFO.LOGIN)
+  const navigate = useNavigate()
 
   const updateLabel = () => {
     const token = localStorage.getItem('token')
     setLogInfo(token ? AUTH_INFO.LOGOUT : AUTH_INFO.LOGIN)
+  }
+
+  const handleAuthToggle = () => {
+    if (logInfo === AUTH_INFO.LOGOUT) {
+      localStorage.removeItem('token')
+      updateLabel()
+    }
+    navigate(ROUTE.LOGIN)
   }
 
   useEffect(() => {
@@ -19,5 +30,5 @@ export const useAuthenticate = () => {
     return () => window.removeEventListener('storage', updateLabel)
   }, [])
 
-  return [logInfo, updateLabel] as const
+  return [logInfo, handleAuthToggle] as const
 }

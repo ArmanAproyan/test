@@ -14,16 +14,22 @@
 }
 
 %primary-button {
-  width: 100px;
   height: 30px;
-  background-color: $accent-color;
+  background-color: $black-color;
+  border-radius: 12px;
   font-weight: bold;
   box-shadow: 1px 1px 1px 1px;
   cursor: pointer;
   transition: 0.5s;
 
   &:hover {
-    transform: scale(0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 }
 
